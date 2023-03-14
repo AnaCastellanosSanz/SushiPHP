@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+  <head >
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-2YUq3zGMEFLvrlL7Oc6f//+V7TGlTjkca/uV7GboJEYqwY9X97sQ0yf/v7E0OGsLs7fmxTzPwJ7VcSXXdYI7VQ==" crossorigin="anonymous" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+  </head>
+  <body  style="background-color: #C3C3C3" >
+    <div class="container" >
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+      <img class="navbar-brand" height="35px" style="width: 50px; height:50px" src="https://hanamicastro.com/wp-content/uploads/2018/02/logo.png"
+        />
+        <button 
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon" ></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup"  >
+          <div class="navbar-nav mr-auto">
+            <a class="nav-link active" href="{{ path('inicio') }}">Inicio <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{{path("listPlatos")}}"><i class="fas fa-utensils mr-2"></i>Listar platos</a>
+            <a class="nav-link" href="{{ path('sushiDiario') }}"><i class="fas fa-plus-circle mr-2"></i>Menu diario</a>
+            <a class="nav-link" href="{{ path('insertPlato') }}"><i class="fas fa-plus-circle mr-2"></i>Crear plato</a>
+          {% if is_granted('ROLE_USER') %}
+          <p class="nav-link" style="color: yellow">User: {{ app.user.name }}</p>
+          <a class="nav-link" style="color: #D80F0F" href="{{ path('app_logout') }}">Cerrar sesión</a>
+        {% endif %}
+          </div>
+
+
+
+        </div>
+      </nav>
+     
+      {% block contenido %} {% endblock %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwr
+  </body>
+</html>

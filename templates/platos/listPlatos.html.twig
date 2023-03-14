@@ -1,0 +1,28 @@
+{% extends 'platos/basePlato.html.twig' %}{% block contenido %}
+{% for mensaje in app.flashes('success') %}
+<p>{{ mensaje }}</p>
+{% endfor %}
+{{form(searchForm)}}
+<h2 style="font-size: 20px; margin-top: 2%; margin-bottom: 2%"></h2>
+<div class="row row-cols-1 row-cols-md-2">
+  {% for plato in platos %}
+  <div class="col mb-4" style="margin-left:3%">
+    <div class="card" style="width: 18rem; background-color:#EFE7EA; border-radius:5%">
+      <img width='320px' height='213px' src="{{ plato.imagen }}" class="card-img-top" style=" border-top-left-radius:5%; border-top-right-radius:5% " />
+      <div class="card-body">
+        <h5 class="card-title">{{ plato.nombre }}</h5>
+        <p class="card-text">{{ plato.descripcion }}</p>
+        <p class="card-text">{{ plato.precio }} €</p>
+        <a href="{{path("showPlato", {id:plato.id})}}"  style="background-color: black"; class="btn btn-primary">Más Info</a>
+         <a href="{{ path('editPlato',{id:plato.id}) }}"  style="background-color: black" class="btn btn-primary">Editar</a>
+        
+         <a href="{{ path('deletePlato',{id:plato.id}) }}"  style="background-color: #D80F0F" class="btn btn-primary">Borrar</a>
+       
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
+

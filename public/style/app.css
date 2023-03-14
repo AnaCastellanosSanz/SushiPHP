@@ -1,0 +1,43 @@
+/* Estilo para el contenedor principal */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #8f1717;
+  }
+  
+  /* Estilo para el contenedor del navbar */
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Estilo para el navbar */
+  .navbar {
+    border-radius: 0;
+  }
+  
+  /* Estilo para la imagen del logo en el navbar */
+  .navbar-brand img {
+    max-height: 35px;
+  }
+  
+  /* Estilo para el botón de toggle en el navbar */
+  .navbar-toggler {
+    border: none;
+  }
+  
+  /* Estilo para los enlaces en el navbar */
+  .navbar-nav a {
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  /* Estilo para el enlace activo en el navbar */
+  .navbar-nav .active {
+    font-weight: bold;
+  }
+  
+  /* Estilo para el icono en los enlaces del navbar */
+  .navbar-nav a i {
+    margin-right: 5px;
+  }

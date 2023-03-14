@@ -1,0 +1,29 @@
+{% extends 'platos/basePlato.html.twig' %}
+{% block contenido %}
+<div class="container" style="margin-top: 2%" >
+  <div class="row">
+    <div class="col-md-6">
+      <img src="{{ plato.imagen }}" class="img-fluid" />
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col">
+           <h2>{{ plato.nombre }}</h2>
+          <p class="lead">{{ plato.descripcion }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" >
+          <h4>Ingredientes:</h4>
+          <ul class="list-group" >
+            {% for ingrediente in plato.ingredientes %}
+              <li style="background-color: #EFE7EA" class="list-group-item">{{ ingrediente.nombre }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+

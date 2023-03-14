@@ -1,0 +1,20 @@
+
+
+{% extends 'platos/basePlato.html.twig' %}{% block contenido %}
+<h2 style="font-size: 20px; margin-top: 2%; margin-bottom: 2%"></h2>
+<div class="row row-cols-1 row-cols-md-2">
+  {% for sushi in sushi_data %}
+  <div class="col mb-4" style="margin-left:3%">
+    <div class="card" style="width: 18rem; background-color:#EFE7EA; border-radius:5%">
+      <img width='320px' height='213px' src="{{ sushi.imagen }}" class="card-img-top" style=" border-top-left-radius:5%; border-top-right-radius:5% " />
+      <div class="card-body">
+        <h5 class="card-title">{{ sushi.nombre }}</h5>
+        <p class="card-text">{{ sushi.descripcion }}</p>
+        <p class="card-text">{{ sushi.precio }} €</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
